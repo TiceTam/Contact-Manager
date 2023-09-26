@@ -13,7 +13,7 @@
     }else{
 
         $stmt = $conn->prepare("UPDATE Contacts SET FirstName = ?, LastName = ?, EmailAddress = ?, PhoneNumber = ? WHERE ID = ?");
-        $stmt->bind_param("sssss", $firstname, $lastname, $email, $phone, $contactID);
+        $stmt->bind_param("ssssi", $firstname, $lastname, $email, $phone, $contactID);
         $stmt->execute();
 
         $result = $stmt->get_result();
@@ -42,6 +42,7 @@
          $retValue = '{"id":0, "firstname": "", "lastname":"", "email":"", "phone":"", "contactID":"", "error":"' . $err . '"}';
          sendResultInfoAsJson( $retValue );
      }
+     
      function returnWithInfo($firstname, $lastname, $email, $phone, $contactID){
         $retValue = '{"id":"'.$contactID.'", "firstname": "'.$firstname.'", "lastname":"'.$lastname.'", "email":"'.$email.'", "phone":"'.$phone.'", "contactID":"'.$contactID.'", "error":"' . $err . '"}';
         sendResultInfoAsJson($retValue);
