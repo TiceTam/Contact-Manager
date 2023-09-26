@@ -19,6 +19,9 @@
 
 		$err = "Successful";
 		returnWithInfo($err);
+
+		$stmt->close();
+		$conn->close();
 	}
 
     
