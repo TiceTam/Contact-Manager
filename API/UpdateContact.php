@@ -5,6 +5,8 @@
     $email = $input['email'];
     $phone = $input['phone'];
     $contactID = $input['contactID'];
+
+    $test = 1;
     
     $conn = new mysqli("localhost", "nstuh", "COP4331Contact", "COP4331");
 
