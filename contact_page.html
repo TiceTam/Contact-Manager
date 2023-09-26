@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #c5e8ef;
+    }
+    </style>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Manager</title>
@@ -23,7 +38,7 @@
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Contact</a>
+            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#addContact">Add Contact</a>
           </li>
         </ul>
         <ul class="navbar-nav ms-auto">
@@ -31,19 +46,19 @@
             <a class="nav-link" href="#">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./index.html">Log Out</a>
+            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#logOut">Log Out</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <!-- Add Contact -->
+  <div class="modal fade" id="addContact" tabindex="-1" aria-labelledby="addContactLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Add Contact</h1>
+          <h1 class="modal-title fs-5" id="addContactLabel">Add Contact</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -69,6 +84,28 @@
     </div>
   </div>
 
+  <!-- Log Out -->
+  <div class="modal fade" id="logOut" tabindex="-1" aria-labelledby="logOutLabel" aria-hidden="true">    
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Log Out</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Are you sure?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <a href =./index.html>
+            <button type="button" class="btn btn-primary">Log Out</button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search bar -->
   <div class="container py-4">
     <div class="row height d-flex justify-content-center align-items-center">
       <div class="col-md-6">
@@ -80,40 +117,37 @@
     </div>
   </div>
 
+  <!-- Table -->
   <div class="container">
-    <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">First</th>
-          <th scope="col">Last</th>
-          <th scope="col">Email</th>
-          <th scope="col">Date Created</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>markotto@gmail.com</td>
-          <td>07/25/2023</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thorn</td>
-          <td>jacobthorn@gmail.com</td>
-          <td>11/01/22</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Isaac</td>
-          <td>Tam</td>
-          <td>isaactam@gmail.com</td>
-          <td>04/13/23</td>
-        </tr>
-      </tbody>
+    <table>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Email</th>
+        <th scope="col">Date Created</th>
+      </tr>
+      <tr>
+        <th scope="row">1</th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>markotto@gmail.com</td>
+        <td>07/25/2023</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Jacob</td>
+        <td>Thorn</td>
+        <td>jacobthorn@gmail.com</td>
+        <td>11/01/22</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>Isaac</td>
+        <td>Tam</td>
+        <td>isaactam@gmail.com</td>
+        <td>04/13/23</td>
+      </tr>
     </table>
   </div>
 
