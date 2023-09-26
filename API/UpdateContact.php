@@ -3,7 +3,7 @@
     $firstname = $input['firstname'];
     $lastname = $input['lastname'];
     $email = $input['email'];
-    $phoneNumber = $input['phone'];
+    $phone = $input['phone'];
     $contactID = $input['contactID'];
     
     $conn = new mysqli("localhost", "nstuh", "COP4331Contact", "COP4331");
@@ -11,21 +11,39 @@
     if($conn->$connect_error){
         returnWithError($conn->connect_error);
     }else{
-        $sqlUpdate = "UPDATE Contacts SET FirstName = '$firstname' , LastName = '$lastname', EmailAddress = '$email', PhoneNumber = '$phoneNumber' WHERE ID = '$contactID'";
-	
 
-        if(($sqlQuery = $conn->query($sqlUpdate)) === TRUE)
-        {
-            $returnString = '{"firstname":"' . $firstname . '", "lastname": "'.$lastname.'","phone":"' . $phoneNumber . '","email":"' . $email . '"}';
-            echo $returnString;
-        }
-        else 
-        {
-            echo "Error: Did not update";
-        }
+        $stmt = $conn->prepare("UPDATE Contacts SET FirstName = ?, LastName = ?, EmailAddress = ?, PhoneNumber = ? WHERE ID = ?");
+        $stmt->bind_param("sssss", $firstname, $lastname, $email, $phone, $contactID);
+        $stmt->execute();
 
-	$conn -> close();
+        $result = $stmt->get_result();
+
+        if($result->fetch_assoc()){
+            returnWithInfo($firstname, $lastname, $email, $phone, $contactID);
+        }
+        else{
+            returnWithError("Update Failed");
+        }
+        $conn->close();
+        $stmt->close();
 
     }
+
+     //Sends json string to front end.
+     function sendResultInfoAsJson( $obj )
+     {
+         header('Content-type: application/json');
+         echo $obj;
+     }
+     
+     //returns an error to the front end
+     function returnWithError( $err )
+     {
+         $retValue = '{"id":0, "firstname": "", "lastname":"", "email":"", "phone":"", "contactID":"", "error":"' . $err . '"}';
+         sendResultInfoAsJson( $retValue );
+     }
+     function returnWithInfo($firstname, $lastname, $email, $phone, $contactID){
+        $retValue = '{"id":"'.$contactID.'", "firstname": "'.$firstname.'", "lastname":"'.$lastname.'", "email":"'.$email.'", "phone":"'.$phone.'", "contactID":"'.$contactID.'", "error":"' . $err . '"}';
+     }
     
 ?>
