@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #c5e8ef;
+    }
+    </style>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Manager</title>
@@ -104,39 +119,35 @@
 
   <!-- Table -->
   <div class="container">
-    <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">First</th>
-          <th scope="col">Last</th>
-          <th scope="col">Email</th>
-          <th scope="col">Date Created</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>markotto@gmail.com</td>
-          <td>07/25/2023</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thorn</td>
-          <td>jacobthorn@gmail.com</td>
-          <td>11/01/22</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Isaac</td>
-          <td>Tam</td>
-          <td>isaactam@gmail.com</td>
-          <td>04/13/23</td>
-        </tr>
-      </tbody>
+    <table>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Email</th>
+        <th scope="col">Date Created</th>
+      </tr>
+      <tr>
+        <th scope="row">1</th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>markotto@gmail.com</td>
+        <td>07/25/2023</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Jacob</td>
+        <td>Thorn</td>
+        <td>jacobthorn@gmail.com</td>
+        <td>11/01/22</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>Isaac</td>
+        <td>Tam</td>
+        <td>isaactam@gmail.com</td>
+        <td>04/13/23</td>
+      </tr>
     </table>
   </div>
 
