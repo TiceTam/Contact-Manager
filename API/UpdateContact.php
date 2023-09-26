@@ -6,7 +6,7 @@
         returnWithError($conn->connect_error);
     }
 
-    $stmt = $conn->prepare("UPDATE Contacts SET (FirstName = ?, LastName = ?, PhoneNumber = ?, EmailAddress = ? WHERE ID = ?");
+    $stmt = $conn->prepare("UPDATE Contacts SET (FirstName = ?, LastName = ?, PhoneNumber = ?, EmailAddress = ?) WHERE ID = ?");
     $stmt->bind_param("sssss", $input["firstname"], $input["lastname"], $input["phone"], $input["email"], $input["contactID"]);
     $stmt->execute();
 
