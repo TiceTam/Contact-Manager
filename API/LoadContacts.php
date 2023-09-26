@@ -13,7 +13,7 @@
     $result = $stmt->get_result();
 
     $contacts = "";
-    $count = 0
+    $count = 0;
 
     while($row = $result->fetch_assoc()){
             
