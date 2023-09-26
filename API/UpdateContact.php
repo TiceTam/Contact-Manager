@@ -44,7 +44,7 @@
      }
      
      function returnWithInfo($firstname, $lastname, $email, $phone, $contactID){
-        $retValue = '{"id":"'.$contactID.'", "firstname": "'.$firstname.'", "lastname":"'.$lastname.'", "email":"'.$email.'", "phone":"'.$phone.'", "contactID":"'.$contactID.'", "error":"' . $err . '"}';
+        $retValue = '{"id":"'.$contactID.'", "firstname": "'.$firstname.'", "lastname":"'.$lastname.'", "email":"'.$email.'", "phone":"'.$phone.'", "contactID":"'.$contactID.'", "error":""}';
         sendResultInfoAsJson($retValue);
      }
     
