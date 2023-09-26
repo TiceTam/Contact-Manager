@@ -13,20 +13,14 @@
     }else{
 
         $stmt = $conn->prepare("UPDATE Contacts SET FirstName = ?, LastName = ?, EmailAddress = ?, PhoneNumber = ? WHERE ID = ?");
-        $stmt->bind_param("ssssi", $firstname, $lastname, $email, $phone, $contactID);
+        $stmt->bind_param("sssss", $firstname, $lastname, $email, $phone, $contactID);
         $stmt->execute();
 
-        $result = $stmt->get_result();
-
-        if($result->fetch_assoc()){
-            returnWithInfo($firstname, $lastname, $email, $phone, $contactID);
-        }
-        else{
-            returnWithError("Update Failed");
-        }
+        returnWithInfo($firstname, $lastname, $email, $phone, $contactID);
+        
         $conn->close();
         $stmt->close();
-
+        
     }
 
      //Sends json string to front end.
