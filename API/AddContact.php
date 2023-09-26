@@ -1,11 +1,25 @@
 <?php 
     
     $input = json_decode(file_get_contents('php://input'), true);
+	$userID = $input['userID'];
+	$firstname = $input['firstname'];
+	$lastname = $input['lastname'];
+	$email = $input['email'];
+	$phone = $input['phone'];
+
     $conn = new mysqli("localhost", "nstuh", "COP4331Contact", "COP4331");
 
     if($conn->$connect_error){
         returnWithError($conn->connect_error);
     }
+	else{
+		$stmt = $conn->prepare("INSERT INTO Contacts (FirstName, LastName, EmailAddress, PhoneNumber, UserID) SET (?,?,?,?,?)");
+		$stmt->bind_param("sssss", $firstname, $lastname, $email, $phone, $userID);
+		$stmt->execute();
+
+		$err = "Successful";
+		returnWithInfo($err);
+	}
 
     
 
