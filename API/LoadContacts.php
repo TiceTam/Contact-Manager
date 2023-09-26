@@ -23,7 +23,7 @@
 		}
         $count++;
 
-        $contacts .= '{"name": "' .$row["Name"].'", "phone" : "' . $row["Phone"]. '", "email" : "' . $row["Email"]. '", "userID" : "' . $row["UserID"].'", "ID" : "' . $row["ID"]. '"}';
+        $contacts .= '{"firstname": "' .$row["FirstName"].'", "lastname": "'.$row["LastName"].'", "phone" : "' . $row["PhoneNumber"]. '", "email" : "' . $row["EmailAddress"]. '", "userID" : "' . $row["UserID"].'", "ID" : "' . $row["ID"]. '"}';
     }
 
     returnWithInfo($contacts);
