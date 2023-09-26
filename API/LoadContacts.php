@@ -6,7 +6,7 @@
         returnWithError($conn->connect_error);
     }
 
-    $stmt = $conn->prepare("SELECT * FROM Contacts WHERE UserID = ?");
+    $stmt = $conn->prepare("SELECT * FROM Contacts WHERE (UserID = ?)");
     $stmt->bind_param("s", $input["userID"]);
     $stmt->execute();
 
