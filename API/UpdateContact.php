@@ -18,7 +18,7 @@
 
     function returnWithInfo( $id )
 	{
-		$retValue = '{"id":"' . $id . '","error":"Successfully Updated"}';
+		$retValue = '{"id":"' . $id . '","error":""}';
 		sendResultInfoAsJson( $retValue );
 	}
 
