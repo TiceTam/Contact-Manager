@@ -13,7 +13,7 @@
         returnWithError($conn->connect_error);
     }
 	else{
-		$stmt = $conn->prepare("INSERT INTO Contacts (FirstName, LastName, EmailAddress, PhoneNumber, UserID) VALUES ('?','?','?','?','?')");
+		$stmt = $conn->prepare("INSERT INTO Contacts (FirstName, LastName, EmailAddress, PhoneNumber, UserID) VALUES (?,?,?,?,?)");
 		$stmt->bind_param("sssss", $firstname, $lastname, $email, $phone, $userID);
 		$stmt->execute();
 
