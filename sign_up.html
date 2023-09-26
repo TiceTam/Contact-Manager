@@ -23,32 +23,30 @@
               <p class="text-black-50 mb-5">Enter your email and create password</p>
 
               <div class="form-floating mb-4">
-                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <input type="email" class="form-control" id="typeEmail" placeholder="name@example.com">
                 <label for="floatingInput">Email address</label>
               </div>
 
               <div class="form-floating mb-4">
-                <input type="password" class="form-control" placeholder="Password" id="typePasswordX">
-                <label for="typePasswordX">Password</label>
+                <input type="password" class="form-control" placeholder="Password" id="typePassword">
+                <label for="typePassword">Password</label>
               </div>
 
               <div class="form-floating mb-4">
-                <input type="password" class="form-control" placeholder="Password" id="typePasswordX">
-                <label for="typePasswordX">Re-enter Password</label>
+                <input type="password" class="form-control" placeholder="Password" id="typePassword">
+                <label for="typePassword">Re-enter Password</label>
               </div>
                 <script>
-                let currentUser {  
-                }
+                let currentUser={};
+                let data={};
                 currentUser.email = document.getElementById('typeEmail')
                 currentUser.password = document.getElementById('typePassword')
 
                 fetch("API/Registration.php",{
-                "method": "GET",
-                "headers": {
-                    "Content-Type" : "application/json; charset=utf-8"
+                  "method": "GET",
+                  "headers": {
+                      "Content-Type" : "application/json; charset=utf-8"
                 },
-
-                "body" : JSON.stringify(currentUser)
 
                 })
                 .then(function(response){
@@ -59,10 +57,10 @@
                 .then(function(data){
                   console.log(data);
                 })
-                .catch(function(error)){
+                .catch(function(error){
                   console.log(error)
                   console.log("Shit's fucked.")
-                };
+                });
                 let userInfo = JSON.parse(data);
               </script>
               <a href="./contact_page.html" type="button" class="btn btn-outline-dark btn-lg px-5">Sign Up</a>
