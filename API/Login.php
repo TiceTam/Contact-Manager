@@ -2,9 +2,6 @@
     //decodes the json input from the front end
     $input = json_decode(file_get_contents('php://input'), true);
 
-    $id = 0;
-    $firstname = "";
-    $lastname = "";
 
     //connects to database with the hostname, username, password, database name
     $conn = new mysqli("localhost", "nstuh", "COP4331Contact", "COP4331"); 
@@ -48,7 +45,7 @@
 		header('Content-type: application/json');
 		echo $obj;
 	}
-    
+
     //returns an error to the front end
     function returnWithError( $err )
 	{
