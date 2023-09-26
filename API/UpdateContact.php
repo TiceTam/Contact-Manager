@@ -16,7 +16,7 @@
 
         if(($sqlQuery = $conn->query($sqlUpdate)) === TRUE)
         {
-            $returnString = '{"name":"' . $name . '","phone":"' . $phoneNumber . '","email":"' . $email . '"}';
+            $returnString = '{"firstname":"' . $firstname . '", "lastname": "'.$lastname.'","phone":"' . $phoneNumber . '","email":"' . $email . '"}';
             echo $returnString;
         }
         else 
