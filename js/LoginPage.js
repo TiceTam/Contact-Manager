@@ -11,7 +11,7 @@ loginButton.addEventListener('click',()=>{
     }
 
     fetch("API/Login.php",{
-        "method": "GET",
+        "method": "POST",
         "headers": {
             "Content-Type" : "application/json; charset=utf-8"
         },
