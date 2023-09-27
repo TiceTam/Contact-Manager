@@ -28,14 +28,13 @@ loginButton.addEventListener('click',()=>{
         })
         .then(function(data){
           console.log(data);
-          login(data);
+          login(JSON.parse(data));
         });
 
 });
 
 function login(data){
     
-
     if(data.err == ""){
         sessionStorage("userID", data.id);
         window.location.href = "http://cop4331groupfifteen.xyz/contact_page.html";
