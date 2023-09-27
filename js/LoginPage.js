@@ -28,7 +28,8 @@ loginButton.addEventListener('click',()=>{
         })
         .then(function(data){
           console.log(data);
-          login(JSON.parse(data));
+          let info = JSON.parse(data);
+          login(info);
         });
 
 });
