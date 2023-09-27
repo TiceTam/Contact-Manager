@@ -41,6 +41,6 @@ function login(data){
         window.location.href = "http://cop4331groupfifteen.xyz/contact_page.html";
     }
     else{
-        loginError.innerHTML = ""+ data.error +"";
+        loginError.innerHTML = "Username or Password Incorrect";
     }
 }
