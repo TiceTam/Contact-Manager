@@ -21,7 +21,7 @@ loginButton.addEventListener('click',()=>{
         })
         .then(function(response){
           console.log("it worked?");
-        return response.JSON();
+        return response.json();
         
         })
         .then(function(data){
