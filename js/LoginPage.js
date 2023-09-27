@@ -37,7 +37,7 @@ loginButton.addEventListener('click',()=>{
 function login(data){
     
     if(data.error == ""){
-        sessionStorage("userID", data.id);
+        sessionStorage.setItem("userID", data.id);
         window.location.href = "http://cop4331groupfifteen.xyz/contact_page.html";
     }
     else{
