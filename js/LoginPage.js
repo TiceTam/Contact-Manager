@@ -23,7 +23,7 @@ loginButton.addEventListener('click',()=>{
         })
         .then(function(response){
           console.log("it worked?");
-        return response.json();
+        return response.text();
         
         })
         .then(function(data){
