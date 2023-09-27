@@ -1,4 +1,6 @@
+
 let loginButton = document.getElementById("loginButton");
+let loginError = document.getElementById("loginError");
 
 
 loginButton.addEventListener('click',()=>{
@@ -26,6 +28,19 @@ loginButton.addEventListener('click',()=>{
         })
         .then(function(data){
           console.log(data);
+          login(data);
         });
 
 });
+
+function login(data){
+    
+
+    if(data.err == ""){
+        sessionStorage("userID", data.id);
+        window.location.href = "http://cop4331groupfifteen.xyz/contact_page.html";
+    }
+    else{
+        loginError.innerHTML = ""+ data.err +"";
+    }
+}
