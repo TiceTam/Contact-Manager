@@ -12,11 +12,11 @@
     if($conn->connect_error){
         returnWithError($conn->connect_error);
     }else{
-
+        echo json_encode(array());
         $stmt = $conn->prepare("UPDATE Contacts SET FirstName = ?, LastName = ?, EmailAddress = ?, PhoneNumber = ? WHERE ID = ?");
         $stmt->bind_param("sssss", $firstname, $lastname, $email, $phone, $contactID);
         $stmt->execute();
-        echo json_encode(array());
+        
         returnWithInfo($firstname, $lastname, $email, $phone, $contactID);
         
         $conn->close();
