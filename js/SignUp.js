@@ -31,9 +31,9 @@ signupButton.addEventListener('click',()=>{
           let info = JSON.parse(data);
           signUp(info);
         })
-        .catch(error){
+        .catch(error{
             console.log(data.error)
-        }
+        });
 
 });
 
