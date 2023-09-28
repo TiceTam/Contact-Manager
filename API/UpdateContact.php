@@ -1,5 +1,5 @@
 <?php
-    $input = json_decode(file_get_contents('php://input', true));
+    $input = json_decode(file_get_contents('php://input'),true);
     $firstname = $input['firstname'];
     $lastname = $input['lastname'];
     $email = $input['email'];
@@ -12,7 +12,6 @@
     if($conn->connect_error){
         returnWithError($conn->connect_error);
     }else{
-        echo json_encode(array());
         $stmt = $conn->prepare("UPDATE Contacts SET FirstName = ?, LastName = ?, EmailAddress = ?, PhoneNumber = ? WHERE ID = ?");
         $stmt->bind_param("sssss", $firstname, $lastname, $email, $phone, $contactID);
         $stmt->execute();
