@@ -1,16 +1,16 @@
+let loginButton = document.getElementById("signupButton");
+// let loginError = document.getElementById("loginError");
 
-let loginButton = document.getElementById("loginButton");
-let loginError = document.getElementById("loginError");
+let currentUser = {}
 
+signupButton.addEventListener('click',()=>{
+    currentUser.username = document.getElementById("typeEmail").value;
+    currentUser.password = document.getElementById("typePassword").value;
 
-loginButton.addEventListener('click',()=>{
-    let username = document.getElementById("typeEmail").value;
-    let password = document.getElementById("typePassword").value;
-
-    let currentUser = {
-        "username": username,
-        "password": password
-    }
+    // let currentUser = {
+    //     "username": username,
+    //     "password": password
+    // }
 
     fetch("API/Login.php",{
         "method": "POST",
