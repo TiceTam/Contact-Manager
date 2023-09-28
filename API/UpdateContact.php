@@ -6,7 +6,6 @@
     $phone = $input['phone'];
     $contactID = $input['contactID'];
 
-    $test = 1;
     
     $conn = new mysqli("localhost", "nstuh", "COP4331Contact", "COP4331");
 
@@ -14,7 +13,7 @@
         returnWithError($conn->connect_error);
     }else{
 
-        $stmt = $conn->prepare("UPDATE Contacts SET FirstName = ?, LastName = ?, EmailAddress = ?, PhoneNumber = ? WHERE ID = ?");
+        $stmt = $conn->prepare("UPDATE Contacts SET FirstName = '?', LastName = '?', EmailAddress = '?', PhoneNumber = '?' WHERE ID = '?'");
         $stmt->bind_param("sssss", $firstname, $lastname, $email, $phone, $contactID);
         $stmt->execute();
 
