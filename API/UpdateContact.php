@@ -17,6 +17,7 @@
         $stmt->bind_param("sssss", $firstname, $lastname, $email, $phone, $contactID);
         $stmt->execute();
 
+        returnWithError("Successful");
         
         $conn->close();
         $stmt->close();
