@@ -1,5 +1,5 @@
-let loginButton = document.getElementById("signupButton");
-// let loginError = document.getElementById("loginError");
+let signUpButton = document.getElementById("signupButton");
+let signUpError = document.getElementById("signUpError");
 
 let currentUser = {}
 
@@ -29,18 +29,21 @@ signupButton.addEventListener('click',()=>{
         .then(function(data){
           console.log(data);
           let info = JSON.parse(data);
-          login(info);
-        });
+          signUp(info);
+        })
+        .catch(error){
+            console.log(data.error)
+        }
 
 });
 
-function login(data){
+function signUp(data){
     
     if(data.error == ""){
         sessionStorage.setItem("userID", data.id);
         window.location.href = "http://cop4331groupfifteen.xyz/contact_page.html";
     }
-    else{
-        loginError.innerHTML = "Username or Password Incorrect";
-    }
+    // else{
+    //     signUpError.innerHTML = "Username or Password Incorrect";
+    // }
 }
