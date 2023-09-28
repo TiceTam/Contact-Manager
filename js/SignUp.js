@@ -30,10 +30,11 @@ signupButton.addEventListener('click',()=>{
           console.log(data);
           let info = JSON.parse(data);
           signUp(info);
-        })
-        .catch((error){
-            console.log(data.error)
         });
+        // .catch((error){
+            
+        //     console.log(data.error)
+        // });
 
 });
 
@@ -43,7 +44,7 @@ function signUp(data){
         sessionStorage.setItem("userID", data.id);
         window.location.href = "http://cop4331groupfifteen.xyz/contact_page.html";
     }
-    // else{
-    //     signUpError.innerHTML = "Username or Password Incorrect";
-    // }
+    else{
+        signUpError.innerHTML = "Username or Password Incorrect";
+    }
 }
