@@ -9,7 +9,7 @@
     
     $conn = new mysqli("localhost", "nstuh", "COP4331Contact", "COP4331");
 
-    if($conn->$connect_error){
+    if($conn->connect_error){
         returnWithError($conn->connect_error);
     }else{
 
@@ -17,7 +17,7 @@
         $stmt->bind_param("sssss", $firstname, $lastname, $email, $phone, $contactID);
         $stmt->execute();
 
-        returnWithError("Successful");
+        returnWithInfo($firstname, $lastname, $email, $phone, $contactID);
         
         $conn->close();
         $stmt->close();
