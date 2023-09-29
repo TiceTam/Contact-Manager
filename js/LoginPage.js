@@ -12,25 +12,32 @@ loginButton.addEventListener('click',()=>{
         "password": password
     }
 
-    fetch("API/Login.php",{
-        "method": "POST",
-        "headers": {
-            "Content-Type" : "application/json; charset=utf-8"
-        },
+    if(username == "" || password == ""){
+        loginError.innerHTML = "Missing Fields";
+    }
+    else
+    {
 
-        "body" : JSON.stringify(currentUser)
+        fetch("API/Login.php",{
+            "method": "POST",
+            "headers": {
+                "Content-Type" : "application/json; charset=utf-8"
+            },
 
-        })
-        .then(function(response){
-          console.log("it worked?");
-        return response.text();
-        
-        })
-        .then(function(data){
-          console.log(data);
-          let info = JSON.parse(data);
-          login(info);
+            "body" : JSON.stringify(currentUser)
+
+            })
+            .then(function(response){
+            console.log("it worked?");
+            return response.text();
+            
+            })
+            .then(function(data){
+            console.log(data);
+            let info = JSON.parse(data);
+            login(info);
         });
+    }
 
 });
 

@@ -1,23 +1,21 @@
 <?php
-    $input = json_decode(file_get_contents('php://input', true));
+    $input = json_decode(file_get_contents('php://input'),true);
     $firstname = $input['firstname'];
     $lastname = $input['lastname'];
     $email = $input['email'];
     $phone = $input['phone'];
     $contactID = $input['contactID'];
 
-    $test = 1;
     
     $conn = new mysqli("localhost", "nstuh", "COP4331Contact", "COP4331");
 
-    if($conn->$connect_error){
+    if($conn->connect_error){
         returnWithError($conn->connect_error);
     }else{
-
         $stmt = $conn->prepare("UPDATE Contacts SET FirstName = ?, LastName = ?, EmailAddress = ?, PhoneNumber = ? WHERE ID = ?");
         $stmt->bind_param("sssss", $firstname, $lastname, $email, $phone, $contactID);
         $stmt->execute();
-
+        
         returnWithInfo($firstname, $lastname, $email, $phone, $contactID);
         
         $conn->close();

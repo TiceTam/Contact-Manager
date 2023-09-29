@@ -5,6 +5,9 @@ let currentUser = {}
 
 signupButton.addEventListener('click',()=>{
     currentUser.username = document.getElementById("typeUsername").value;
+    currentUser.firstName = document.getElementById("typeFName").value;
+    currentUser.lastName = document.getElementById("typeLName").value;
+    currentUser.username = document.getElementById("typeEmail").value;
     currentUser.password = document.getElementById("typePassword").value;
 
     // let currentUser = {
@@ -45,6 +48,6 @@ function signUp(data){
         window.location.href = "http://cop4331groupfifteen.xyz/login_page.html";
     }
     else{
-        signUpError.innerHTML = "Username or Password Incorrect";
+        signUpError.innerHTML = "Username Already Exists";
     }
 }
