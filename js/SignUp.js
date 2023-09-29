@@ -7,7 +7,6 @@ signupButton.addEventListener('click',()=>{
     currentUser.username = document.getElementById("typeUsername").value;
     currentUser.firstName = document.getElementById("typeFName").value;
     currentUser.lastName = document.getElementById("typeLName").value;
-    currentUser.username = document.getElementById("typeEmail").value;
     currentUser.password = document.getElementById("typePassword").value;
 
     // let currentUser = {
