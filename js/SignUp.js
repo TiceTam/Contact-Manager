@@ -12,7 +12,7 @@ signupButton.addEventListener('click',()=>{
     //     "password": password
     // }
 
-    fetch("API/Login.php",{
+    fetch("API/Registration.php",{
         "method": "POST",
         "headers": {
             "Content-Type" : "application/json; charset=utf-8"
@@ -42,9 +42,9 @@ function signUp(data){
     
     if(data.error == ""){
         sessionStorage.setItem("userID", data.id);
-        window.location.href = "http://cop4331groupfifteen.xyz/contact_page.html";
+        window.location.href = "http://cop4331groupfifteen.xyz/login_page.html";
     }
     else{
-        signUpError.innerHTML = "Username or Password Incorrect";
+        signUpError.innerHTML = "Username Already Exists";
     }
 }
