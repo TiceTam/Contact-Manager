@@ -32,11 +32,13 @@ signupButton.addEventListener('click',()=>{
         })
         .then(function(data){
             console.log(data);
-            if data != null:
+            if (data != null) {
                 let info = JSON.parse(data);
                 signUp(info);
-            else:
+            }
+            else {
                 console.log("Null data returned")
+            }
         });
         // .catch((error){
             
