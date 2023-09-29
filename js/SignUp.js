@@ -4,6 +4,8 @@ let signUpError = document.getElementById("signUpError");
 let currentUser = {}
 
 signupButton.addEventListener('click',()=>{
+    currentUser.firstName = document.getElementById("typeFName").value;
+    currentUser.lastName = document.getElementById("typeLName").value;
     currentUser.username = document.getElementById("typeEmail").value;
     currentUser.password = document.getElementById("typePassword").value;
 
@@ -12,7 +14,7 @@ signupButton.addEventListener('click',()=>{
     //     "password": password
     // }
 
-    fetch("API/Login.php",{
+    fetch("API/Registration.php",{
         "method": "POST",
         "headers": {
             "Content-Type" : "application/json; charset=utf-8"
