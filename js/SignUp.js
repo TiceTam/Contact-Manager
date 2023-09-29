@@ -31,7 +31,7 @@ signupButton.addEventListener('click',()=>{
         
         })
         .then(function(data){
-        if (data != null) {
+        if (data != null || data != "") {
             console.log(data);
             let info = JSON.parse(data);
             signUp(info);
