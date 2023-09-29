@@ -4,15 +4,15 @@ let signUpError = document.getElementById("signUpError");
 // let currentUser = {}
 
 signupButton.addEventListener('click',()=>{
-    firstName = document.getElementById("typeFName").value;
-    lastName = document.getElementById("typeLName").value;
-    username = document.getElementById("typeUsername").value;
-    password = document.getElementById("typePassword").value;
+    let firstName = document.getElementById("typeFName").value;
+    let lastName = document.getElementById("typeLName").value;
+    let username = document.getElementById("typeUsername").value;
+    let password = document.getElementById("typePassword").value;
 
     let currentUser = {
-        "firstName": firstName
-        "lastName": lastName
-        "username": username
+        "firstName": firstName,
+        "lastName": lastName,
+        "username": username,
         "password": password
      }
 
