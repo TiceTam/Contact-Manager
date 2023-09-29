@@ -26,19 +26,19 @@ signupButton.addEventListener('click',()=>{
 
         })
         .then(function(response){
-          console.log("it worked?");
+        console.log("it worked?");
         return response.text();
         
         })
         .then(function(data){
+        if (data != null) {
             console.log(data);
-            if (data != null) {
-                let info = JSON.parse(data);
-                signUp(info);
-            }
-            else {
-                console.log("Null data returned")
-            }
+            let info = JSON.parse(data);
+            signUp(info);
+        }
+        else {
+            console.log("Null data returned")
+        }
         });
         // .catch((error){
             
