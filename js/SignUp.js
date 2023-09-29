@@ -4,6 +4,8 @@ let signUpError = document.getElementById("signUpError");
 let currentUser = {}
 
 signupButton.addEventListener('click',()=>{
+    currentUser.firstName = document.getElementById("typeFName").value;
+    currentUser.lastName = document.getElementById("typeLName").value;
     currentUser.username = document.getElementById("typeEmail").value;
     currentUser.password = document.getElementById("typePassword").value;
 
