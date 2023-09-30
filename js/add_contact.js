@@ -23,6 +23,9 @@ document.addEventListener("DOMContentLoaded", function () {
     .then((data) => {
         if (data.success) {
             alert("Contact added successfully!");
+            firstNameInput.value = '';
+            lastNameInput.value = '';
+            emailInput.value = '';
         } else {
             alert("Error adding contact. Please try again.");
         }
