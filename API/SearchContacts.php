@@ -10,7 +10,7 @@
     }
     else{
         $stmt = $conn->prepare("SELECT * FROM Contacts WHERE (UserID = ?) AND (FirstName LIKE '%?%' OR LastName LIKE '%?%')");
-        $stmt->bind_param("ss", $userID, $name);
+        $stmt->bind_param("sss", $userID, $name, $name);
         $stmt->execute();
 
         $result = $stmt->get_result();
