@@ -9,7 +9,7 @@
         returnWithError($conn->connect_error);
     }
     else{
-        $stmt = $conn->prepare("SELECT * FROM Contacts WHERE (UserID = ?) AND (FirstName LIKE)");
+        $stmt = $conn->prepare("SELECT * FROM Contacts WHERE (UserID = ?) AND (FirstName LIKE '%?%' OR LastName LIKE '%?%')");
         $stmt->bind_param("ss", $userID, $name);
         $stmt->execute();
 
