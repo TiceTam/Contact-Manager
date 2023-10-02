@@ -10,7 +10,7 @@
     }
     else{
         $searchValue = "'%". $name. "%'";
-        $sql = "SELECT * FROM Contacts WHERE UserID=".$userID. "AND (FirstName LIKE ". $searchValue ." OR LastName LIKE ".$searchValue.")  ;";
+        $sql = "SELECT * FROM Contacts WHERE UserID=".$userID." AND (FirstName LIKE ". $searchValue ." OR LastName LIKE ".$searchValue.");";
 
         $result = $conn->query($sql);
 
