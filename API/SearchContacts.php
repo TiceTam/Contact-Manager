@@ -1,7 +1,7 @@
 <?php
     $input = json_decode(file_get_contents('php://input'),true);
     $userID = $input['userID'];
-    $name = $input['contactID'];
+    $name = $input['name'];
 
     $conn = new mysqli("localhost", "nstuh", "COP4331Contact", "COP4331");
 
