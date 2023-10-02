@@ -20,11 +20,18 @@
             <div class="mb-md-5 mt-md-4 pb-5">
 
               <h2 class="fw-bold mb-2 text-uppercase">Sign Up</h2>
-              <p class="text-black-50 mb-5">Enter your email and create password</p>
-
+              <p class="text-black-50 mb-5">Enter your first and last name, email, and create a password</p>
               <div class="form-floating mb-4">
-                <input type="email" class="form-control" id="typeEmail" placeholder="name@example.com">
-                <label for="typeEmail">Email address</label>
+                <input type="firstName" class="form-control" placeholder="First Name" id="typeFName">
+                <label for="firstName">First Name</label>
+              </div>
+              <div class="form-floating mb-4">
+                <input type="lastName" class="form-control" placeholder="Last Name" id="typeLName">
+                <label for="lastName">Last Name</label>
+              </div>
+              <div class="form-floating mb-4">
+                <input type="username" class="form-control" id="typeUsername" placeholder="Username">
+                <label for="username">Username</label>
               </div>
 
               <div class="form-floating mb-4">
@@ -32,10 +39,10 @@
                 <label for="typePassword">Password</label>
               </div>
 
-              <div class="form-floating mb-4">
+<!--          <div class="form-floating mb-4">
                 <input type="password" class="form-control" placeholder="Password" id="typePassword">
                 <label for="typePassword">Re-enter Password</label>
-              </div>
+              </div> -->
               <p id="signUpError"></p>
               <input type="button" value="Sign Up" id="signupButton" class="btn btn-outline-dark btn-lg px-5">
 

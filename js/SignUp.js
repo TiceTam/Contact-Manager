@@ -1,18 +1,20 @@
 let signUpButton = document.getElementById("signupButton");
 let signUpError = document.getElementById("signUpError");
 
-let currentUser = {}
+// let currentUser = {}
 
 signupButton.addEventListener('click',()=>{
-    currentUser.firstName = document.getElementById("typeFName").value;
-    currentUser.lastName = document.getElementById("typeLName").value;
-    currentUser.username = document.getElementById("typeEmail").value;
-    currentUser.password = document.getElementById("typePassword").value;
+    let firstName = document.getElementById("typeFName").value;
+    let lastName = document.getElementById("typeLName").value;
+    let username = document.getElementById("typeUsername").value;
+    let password = document.getElementById("typePassword").value;
 
-    // let currentUser = {
-    //     "username": username,
-    //     "password": password
-    // }
+    let currentUser = {
+        "firstName": firstName,
+        "lastName": lastName,
+        "username": username,
+        "password": password
+     }
 
     fetch("API/Registration.php",{
         "method": "POST",
@@ -24,14 +26,19 @@ signupButton.addEventListener('click',()=>{
 
         })
         .then(function(response){
-          console.log("it worked?");
+        console.log("it worked?");
         return response.text();
         
         })
         .then(function(data){
-          console.log(data);
-          let info = JSON.parse(data);
-          signUp(info);
+        if (data != null && data != "") {
+            console.log(data);
+            let info = JSON.parse(data);
+            signUp(info);
+        }
+        else {
+            console.log("Null data returned")
+        }
         });
         // .catch((error){
             

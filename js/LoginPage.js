@@ -4,7 +4,7 @@ let loginError = document.getElementById("loginError");
 
 
 loginButton.addEventListener('click',()=>{
-    let username = document.getElementById("typeEmail").value;
+    let username = document.getElementById("typeUsername").value;
     let password = document.getElementById("typePassword").value;
 
     let currentUser = {
@@ -36,7 +36,7 @@ loginButton.addEventListener('click',()=>{
             console.log(data);
             let info = JSON.parse(data);
             login(info);
-        });
+            });
     }
 
 });
