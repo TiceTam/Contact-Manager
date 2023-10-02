@@ -1,7 +1,7 @@
 <?php
 
     $input = json_decode(file_get_contents('php://input'), true);
-    $userID = $input['userID'];
+    $contactID = $input['contactID'];
     
     
     $conn = new mysqli("localhost", "nstuh", "COP4331Contact", "COP4331");
@@ -11,7 +11,7 @@
     }
     
     else {
-        $stmt = $conn->prepare("DELETE FROM Contacts WHERE userID= '$userID'");
+        $stmt = $conn->prepare("DELETE FROM Contacts WHERE ID= '$contactID'");
         $stmt->execute();
         
 
