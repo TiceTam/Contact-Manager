@@ -9,11 +9,10 @@
         returnWithError($conn->connect_error);
     }
     else{
-        $stmt = $conn->prepare("SELECT * FROM Contacts WHERE (UserID = ?) AND (FirstName LIKE '%?%' OR LastName LIKE '%?%')");
-        $stmt->bind_param("sss", $userID, $name, $name);
-        $stmt->execute();
+        $searchValue = "'%". $name. "%'";
+        $sql = "SELECT * FROM Contacts WHERE Name LIKE ". $searchValue ." AND UserID=".$userID. ";";
 
-        $result = $stmt->get_result();
+        $result = $conn->query($sql);
 
         $contacts = "";
         $count = 0;
