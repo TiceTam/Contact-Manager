@@ -41,7 +41,7 @@ signupButton.addEventListener('click',()=>{
         //         console.log("The responses string is null")
         //     }
             // window.location.href = "http://cop4331groupfifteen.xyz/login_page.html";
-        })
+        // })
         // gets the object
         .then((info) => {
             console.log("Passing JSON to signup")
