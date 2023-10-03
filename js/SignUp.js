@@ -26,9 +26,15 @@ signupButton.addEventListener('click',()=>{
         })
         // response should be a promise JSON
         .then(function(response){
-            console.log("Got a response");
-            text = response.json()
-            return text
+            // console.log("Got a response");
+            // text = response.json()
+            // return text
+            if (response.ok) {
+                window.location.href = "http://cop4331groupfifteen.xyz/login_page.html";
+            }
+            else {
+                signUpError.innerHTML = "Username Already Exists"
+            }
         })
         // // takes string, should convert to object
         // .then((text) => {
