@@ -15,7 +15,7 @@ mysearch.addEventListener('keypress',function(event){
 
 
 function searchContacts(){
-    let userID = sessioStorage.getItem("userID");
+    let userID = sessionStorage.getItem("userID");
     let name = document.getElementById("mysearch").value;
 
     let search = {
