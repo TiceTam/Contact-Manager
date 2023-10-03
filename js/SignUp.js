@@ -29,13 +29,16 @@ signupButton.addEventListener('click',()=>{
             // console.log("Got a response");
             // text = response.json()
             // return text
-            if (response.ok) {
+            return response.json()
+        })
+        .then((data) =>{
+            if (data.success) {
                 window.location.href = "http://cop4331groupfifteen.xyz/login_page.html";
             }
             else {
                 signUpError.innerHTML = "Username Already Exists"
             }
-        })
+        });
         // // takes string, should convert to object
         // .then((text) => {
         //     console.log(text)
