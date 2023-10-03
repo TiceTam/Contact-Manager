@@ -1,8 +1,8 @@
 
 
 
-
-
+//initial loading of contacts.
+loadContacts();
 
 
 function loadContacts(){
@@ -21,15 +21,15 @@ function loadContacts(){
 
         "body" : JSON.stringify(currentUser)
 
-        }).then(function(response){
-            return response.text();
+    }).then(function(response){
+        return response.text();
             
-        }).then(function(data){
-            console.log(data);
-            let info = JSON.parse(data);
-            load(info);
-        });
-    }
+    }).then(function(data){
+        console.log(data);
+        let info = JSON.parse(data);
+        load(info);
+    });
+}
 
 
 
