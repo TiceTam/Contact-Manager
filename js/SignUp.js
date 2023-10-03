@@ -32,31 +32,12 @@ signupButton.addEventListener('click',()=>{
             return response.json()
         })
         .then((data) =>{
-            signup(data);
+            signUp(data);
         });
-        // // takes string, should convert to object
-        // .then((text) => {
-        //     console.log(text)
-        //     if (text != null && text != "") {
-        //         let info = JSON.parse(text)
-        //         return info
-        //     }
-        //     else {
-        //         console.log("The responses string is null")
-        //     }
-            // window.location.href = "http://cop4331groupfifteen.xyz/login_page.html";
-        // })
-        // gets the object
-        // .then((info) => {
-        //     console.log("Passing JSON to signup")
-        //     signUp(info)
-        // });
-
 });
 // needs a Javascript object
 function signUp(info){
-    let data = JSON.parse(info)
-    if(data.error == ""){
+    if(info.error == ""){
         // sessionStorage.setItem("userID", data.id);
         // Registration should just be rerouted to login to get id
         window.location.href = "http://cop4331groupfifteen.xyz/login_page.html";
