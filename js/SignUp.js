@@ -26,17 +26,22 @@ signupButton.addEventListener('click',()=>{
 
         })
         .then(function(response){
-        console.log("it worked?");
-        return response.text();
+            console.log("Success");
+            console.log(response.text())
+            window.location.href = "http://cop4331groupfifteen.xyz/login_page.html";
+            return response.text();
         
         })
         // no data should pass to frontend on registration
-        console.log("Null data returned")
-        signUp(data=null);
-        // .catch((error){
-            
-        //     console.log(data.error)
-        // });
+        .then(function(data){
+            // if(data == "" || data == null){
+            //     signUp()
+            // }
+            // signUp(data=null);
+        })
+        .catch((error) => {
+            signUpError.innerHTML = "Username Already Exists";
+        });
 
 });
 
