@@ -34,10 +34,11 @@ signupButton.addEventListener('click',()=>{
         if (data != null && data != "") {
             console.log(data);
             let info = JSON.parse(data);
-            signUp(info);
         }
+        // no data should pass to frontend on registration
         else {
             console.log("Null data returned")
+            signUp();
         }
         });
         // .catch((error){
@@ -47,10 +48,11 @@ signupButton.addEventListener('click',()=>{
 
 });
 
-function signUp(data){
+function signUp(){
     
     if(data.error == ""){
-        sessionStorage.setItem("userID", data.id);
+        // sessionStorage.setItem("userID", data.id);
+        // Registration should just be rerouted to login to get id
         window.location.href = "http://cop4331groupfifteen.xyz/login_page.html";
     }
     else{
