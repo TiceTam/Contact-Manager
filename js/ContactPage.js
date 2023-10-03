@@ -4,8 +4,12 @@
 //initial loading of contacts.
 loadContacts();
 
-signupButton.addEventListener('click',()=>{
-    searchContacts();
+let mysearch = document.getElementById("mysearch");
+
+mysearch.addEventListener('keypress',function(event){
+    if (event.key == "Enter"){
+        searchContacts();
+    }
 });
 
 
