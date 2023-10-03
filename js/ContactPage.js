@@ -23,7 +23,7 @@ function searchContacts(){
         "name": name
     }
 
-    fetch("API/LoadContacts.php",{
+    fetch("API/SearchContacts.php",{
         "method": "POST",
         "headers": {
             "Content-Type" : "application/json; charset=utf-8"
