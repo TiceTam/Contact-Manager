@@ -24,24 +24,32 @@ signupButton.addEventListener('click',()=>{
 
         "body" : JSON.stringify(currentUser)
         })
-        // response should be a JSON
+        // response should be a promise JSON
         .then(function(response){
             console.log("Got a response");
-            return response.json()
+            text = response.text()
+            return text
         })
-        // takes json
-        .then((data) => {
-            // puts it back into a json
-            let info = JSON.parse(data)
-            signUp(info)
+        // takes string, should convert to object
+        .then((text) => {
+            console.log(text)
+            if (text != null && text != "") {
+                let info = JSON.parse(text)
+                return info
+            }
+            else {
+                console.log("The responses string is null")
+            }
             // window.location.href = "http://cop4331groupfifteen.xyz/login_page.html";
         })
-        // .catch((data) => {
-        //     signUpError.innerHTML = "Username Already Exists";
-        // });
+        // gets the object
+        .try((info) => {
+            console.log("Passing JSON to signup")
+            signUp(info)
+        });
 
 });
-
+// needs a Javascript object
 function signUp(data){
     if(data.error == "" || data.error == null){
         // sessionStorage.setItem("userID", data.id);
