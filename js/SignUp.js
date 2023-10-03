@@ -27,7 +27,7 @@ signupButton.addEventListener('click',()=>{
         // response should be a promise JSON
         .then(function(response){
             console.log("Got a response");
-            text = response.text()
+            text = response.json()
             return text
         })
         // takes string, should convert to object
