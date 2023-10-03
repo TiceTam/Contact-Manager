@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const contactsContainer = document.getElementById("contactsContainer"); // replace with actual container ID.
 
     function loadContactsForUser(userId) {
-        // send an API request to fetch contacts for the user
+        // send an API request to fetch contacts for specific user
         fetch(`API/LoadContacts.php?userID=${userId}`, {
             method: "GET",
         })
@@ -39,12 +39,12 @@ document.addEventListener("DOMContentLoaded", function () {
             <p>Name: ${contact.firstname} ${contact.lastname}</p>
             <p>Email: ${contact.email}</p>
         `;
-        // can add more to this div
+        // can add more to this div also need to change this to look like our table, this is quick thing to print out/test
 
-        // Append the contact element to the container
+        // append the contact element to the container
         contactsContainer.appendChild(contactElement);
     }
 
-    // Load contacts for the current user when the page loads
+    // load contacts for the current user when the page loads
     loadContactsForUser(userId);
 });
