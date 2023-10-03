@@ -43,7 +43,7 @@ signupButton.addEventListener('click',()=>{
             // window.location.href = "http://cop4331groupfifteen.xyz/login_page.html";
         })
         // gets the object
-        .try((info) => {
+        .then((info) => {
             console.log("Passing JSON to signup")
             signUp(info)
         });
