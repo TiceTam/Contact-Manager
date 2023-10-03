@@ -23,27 +23,27 @@ signupButton.addEventListener('click',()=>{
         },
 
         "body" : JSON.stringify(currentUser)
-
         })
         .then(function(response){
             console.log("Got a response");
-            return response.text();
-        
+            console.log("response text is" + response.text())
+            let data = JSON.parse(response)
+            return data;
         })
-        // no data should pass to frontend on registration
-        .then((text) => {
-            console.log(text)
-            window.location.href = "http://cop4331groupfifteen.xyz/login_page.html";
+        // no data should pass to frontend on registration?
+        .then((data) => {
+            // puts it back into a json
+            signUp(data)
+            // window.location.href = "http://cop4331groupfifteen.xyz/login_page.html";
         })
-        .catch((error) => {
+        .catch((data) => {
             signUpError.innerHTML = "Username Already Exists";
         });
 
 });
 
 function signUp(data){
-    
-    if(data == "" || data == null){
+    if(data.error == "" || data.error == null){
         // sessionStorage.setItem("userID", data.id);
         // Registration should just be rerouted to login to get id
         window.location.href = "http://cop4331groupfifteen.xyz/login_page.html";
