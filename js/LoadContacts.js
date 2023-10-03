@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
     let userId = ###; // replace with the actual user ID
 
-    const contactsContainer = document.getElementById("contactsContainer"); // replace with your actual container ID.
+    const contactsContainer = document.getElementById("contactsContainer"); // replace with actual container ID.
 
     function loadContactsForUser(userId) {
         // send an API request to fetch contacts for the user
