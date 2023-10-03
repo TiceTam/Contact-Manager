@@ -32,12 +32,7 @@ signupButton.addEventListener('click',()=>{
             return response.json()
         })
         .then((data) =>{
-            if (data.success) {
-                window.location.href = "http://cop4331groupfifteen.xyz/login_page.html";
-            }
-            else {
-                signUpError.innerHTML = "Username Already Exists"
-            }
+            signup(data);
         });
         // // takes string, should convert to object
         // .then((text) => {
@@ -61,7 +56,7 @@ signupButton.addEventListener('click',()=>{
 // needs a Javascript object
 function signUp(info){
     let data = JSON.parse(info)
-    if(data.error == "" || data.error == null){
+    if(data.error == ""){
         // sessionStorage.setItem("userID", data.id);
         // Registration should just be rerouted to login to get id
         window.location.href = "http://cop4331groupfifteen.xyz/login_page.html";
