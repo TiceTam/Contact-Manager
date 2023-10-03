@@ -80,6 +80,10 @@ function loadContacts(){
 function load(info){
     contacts = info.results
     table = document.getElementById("contactTable");
+    table
+    for(var i = 1;i<table.rows.length;){
+        table.deleteRow(i);
+    }
     
     for(i = 1; i <= contacts.length; i++){
         let row = table.insertRow(-1);
