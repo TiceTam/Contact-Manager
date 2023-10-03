@@ -38,7 +38,7 @@ signupButton.addEventListener('click',()=>{
         // no data should pass to frontend on registration
         else {
             console.log("Null data returned")
-            signUp();
+            signUp(data);
         }
         });
         // .catch((error){
@@ -50,7 +50,7 @@ signupButton.addEventListener('click',()=>{
 
 function signUp(){
     
-    if(data.error == ""){
+    if(data == ""){
         // sessionStorage.setItem("userID", data.id);
         // Registration should just be rerouted to login to get id
         window.location.href = "http://cop4331groupfifteen.xyz/login_page.html";
