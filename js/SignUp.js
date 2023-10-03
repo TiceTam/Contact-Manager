@@ -24,18 +24,16 @@ signupButton.addEventListener('click',()=>{
 
         "body" : JSON.stringify(currentUser)
         })
+        // response should be a JSON
         .then(function(response){
             console.log("Got a response");
-            console.log("response text is" + response.text())
-
-            let data = response.json()
-            return data;
+            return response.json()
         })
-        // no data should pass to frontend on registration?
+        // takes json
         .then((data) => {
             // puts it back into a json
-            console.log(data.id)
-            signUp(data)
+            let info = JSON.parse(data)
+            signUp(info)
             // window.location.href = "http://cop4331groupfifteen.xyz/login_page.html";
         })
         // .catch((data) => {
