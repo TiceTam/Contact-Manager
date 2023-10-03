@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     
-    let userId = 1; // Replace with the actual user ID
+    let userId = ###; // replace with the actual user ID
 
     const contactsContainer = document.getElementById("contactsContainer"); // replace with your actual container ID.
 
