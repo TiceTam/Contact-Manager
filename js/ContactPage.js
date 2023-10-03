@@ -4,6 +4,44 @@
 //initial loading of contacts.
 loadContacts();
 
+signupButton.addEventListener('click',()=>{
+    searchContacts();
+});
+
+
+
+function searchContacts(){
+    let userID = sessioStorage.getItem("userID");
+    let name = document.getElementById("mysearch").value;
+
+    let search = {
+        "userID": userID,
+        "name": name
+    }
+
+    fetch("API/LoadContacts.php",{
+        "method": "POST",
+        "headers": {
+            "Content-Type" : "application/json; charset=utf-8"
+        },
+
+        "body" : JSON.stringify(search)
+
+    }).then(function(response){
+        return response.text();
+            
+    }).then(function(data){
+        console.log(data);
+        let info = JSON.parse(data);
+        load(info);
+    });
+
+}
+
+
+
+
+
 
 function loadContacts(){
 
