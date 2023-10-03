@@ -32,7 +32,7 @@ signupButton.addEventListener('click',()=>{
             return response.json()
         })
         .then((data) =>{
-            signup(data);
+            signUp(data);
         });
         // // takes string, should convert to object
         // .then((text) => {
@@ -55,7 +55,6 @@ signupButton.addEventListener('click',()=>{
 });
 // needs a Javascript object
 function signUp(info){
-    let data = JSON.parse(info)
     if(data.error == ""){
         // sessionStorage.setItem("userID", data.id);
         // Registration should just be rerouted to login to get id
