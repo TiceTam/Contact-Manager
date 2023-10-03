@@ -27,18 +27,20 @@ signupButton.addEventListener('click',()=>{
         .then(function(response){
             console.log("Got a response");
             console.log("response text is" + response.text())
-            let data = JSON.parse(response)
+
+            let data = response.json()
             return data;
         })
         // no data should pass to frontend on registration?
         .then((data) => {
             // puts it back into a json
+            console.log(data.id)
             signUp(data)
             // window.location.href = "http://cop4331groupfifteen.xyz/login_page.html";
         })
-        .catch((data) => {
-            signUpError.innerHTML = "Username Already Exists";
-        });
+        // .catch((data) => {
+        //     signUpError.innerHTML = "Username Already Exists";
+        // });
 
 });
 
