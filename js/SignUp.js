@@ -30,17 +30,9 @@ signupButton.addEventListener('click',()=>{
         return response.text();
         
         })
-        .then(function(data){
-        if (data != null && data != "") {
-            console.log(data);
-            let info = JSON.parse(data);
-        }
         // no data should pass to frontend on registration
-        else {
-            console.log("Null data returned")
-            signUp(data);
-        }
-        });
+        console.log("Null data returned")
+        signUp(data=None);
         // .catch((error){
             
         //     console.log(data.error)
@@ -48,9 +40,9 @@ signupButton.addEventListener('click',()=>{
 
 });
 
-function signUp(){
+function signUp(data){
     
-    if(data == ""){
+    if(data == "" || data == None){
         // sessionStorage.setItem("userID", data.id);
         // Registration should just be rerouted to login to get id
         window.location.href = "http://cop4331groupfifteen.xyz/login_page.html";
