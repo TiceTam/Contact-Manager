@@ -1,3 +1,4 @@
+/*
 document.addEventListener("DOMContentLoaded", function () {
     
     let userId = ###; // replace with the actual user ID
