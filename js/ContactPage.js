@@ -5,11 +5,7 @@ let contactIDs = [];
 loadContacts();
 
 let mysearch = document.getElementById("mysearch");
-let addContactButton = document.getElementById("addConButton");
 
-addContactButton.addEventListener('click', ()=>{
-    addContact();
-});
 
 mysearch.addEventListener('keypress',function(event){
     if (event.key == "Enter"){
