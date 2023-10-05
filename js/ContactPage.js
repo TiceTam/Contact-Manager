@@ -37,6 +37,7 @@ function addContact(){
         "body" : JSON.stringify(contact)
 
     }).then(function(response){
+        console.log(response);
         return response.text();
             
     }).then(function(data){
