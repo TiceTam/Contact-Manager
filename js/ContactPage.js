@@ -56,24 +56,35 @@ function editContact(){
 function deleteContact(){
     let rownum = document.getElementById("deleteButton").parentNode.parentNode.rowIndex
     let contactID = contactIDs[rownum];
+
     let contact = {
         "contactID": contactID
     }
 
-    fetch("API/DeleteContact.php",{
-        "method": "POST",
-        "headers": {
-            "Content-Type" : "application/json; charset=utf-8"
-        },
+    let deletePopup = document.getElementById("deleteContact");
 
-        "body" : JSON.stringify(contact)
+    deletePopup.style.display = "block";
 
-    }).then(function(response){
-        return response.text();
-            
-    }).then(function(data){
-        loadContacts();
+    let deleteConButton = document.getElementById("deleteConButton");
+
+    deleteConButton.addEventListener('click', ()=>{
+        fetch("API/DeleteContact.php",{
+            "method": "POST",
+            "headers": {
+                "Content-Type" : "application/json; charset=utf-8"
+            },
+    
+            "body" : JSON.stringify(contact)
+    
+        }).then(function(response){
+            return response.text();
+                
+        }).then(function(data){
+            loadContacts();
+        });
     });
+
+    
 }
 
 function searchContacts(){
