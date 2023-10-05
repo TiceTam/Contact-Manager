@@ -67,6 +67,7 @@ function editContact(){
     let phoneVal = phone.innerText;
     let buttonVal = buttons.innerHTML;
     
+    table.deleteRow(rownum);
     newRow = table.insertRow(rownum);
     
     let c1 = newRow.insertCell(1);
