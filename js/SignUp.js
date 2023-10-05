@@ -10,8 +10,8 @@ signupButton.addEventListener('click',()=>{
     let password = document.getElementById("typePassword").value;
 
     let currentUser = {
-        "firstName": firstName,
-        "lastName": lastName,
+        "firstname": firstName,
+        "lastname": lastName,
         "username": username,
         "password": password
      }
