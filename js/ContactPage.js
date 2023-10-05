@@ -51,9 +51,9 @@ function editContact(){
     let rownum = document.getElementById("editButton").parentNode.parentNode.rowIndex;
     let contactID = contactIDs[rownum];
 
-    
+    table = document.getElementById("contactTable");
 
-    let row = document.getElementById("editButton").parentNode.parentNode;
+    
 
     let firstname = row.childNodes[1];
     let lastname = row.childNodes[2];
@@ -66,12 +66,21 @@ function editContact(){
     let emailVal = email.innerText;
     let phoneVal = phone.innerText;
     let buttonVal = buttons.innerHTML;
+
+    let row = insertRow(rownum);
     
-    firstname.innerHTML = "<input type='text' value='" + firstnameVal + "' id='typeFNameEdit'>";
-    lastname.innerHTML = "<input type='text' value='" + lastnameVal + "' id='typeLNameEdit'>";
-    email.innerHTML = "<input type='text' value='" + emailVal + "' id='typeEmailEdit'>";
-    phone.innerHTML = "<input type='text' value='" + phoneVal + "' id='typePhoneEdit'>";
-    buttons.innerHTML = "<button id ='confirmEdit'>Confirm</button><button id = 'cancelEdit'>Cancel</button>";
+    let c1 = row.insertCell(1);
+    let c2 = row.insertCell(2);
+    let c3 = row.insertCell(3);
+    let c4 = row.insertCell(4);
+    let c5 = row.insertCell(5);
+   
+    
+    c1.innerHTML = "<input type='text' value='" + firstnameVal + "' id='typeFNameEdit'>";
+    c2.innerHTML = "<input type='text' value='" + lastnameVal + "' id='typeLNameEdit'>";
+    c3.innerHTML = "<input type='text' value='" + emailVal + "' id='typeEmailEdit'>";
+    c4.innerHTML = "<input type='text' value='" + phoneVal + "' id='typePhoneEdit'>";
+    c5.innerHTML = "<button id ='confirmEdit'>Confirm</button><button id = 'cancelEdit'>Cancel</button>";
 
     let confirmEdit = document.getElementById("confirmEdit");
     let cancelEdit = document.getElementById("cancelEdit");
