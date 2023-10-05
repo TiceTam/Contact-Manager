@@ -53,7 +53,7 @@ function editContact(){
 
     table = document.getElementById("contactTable");
 
-    
+    row = document.getElementById("editButton").parentNode.parentNode;
 
     let firstname = row.childNodes[1];
     let lastname = row.childNodes[2];
@@ -66,7 +66,7 @@ function editContact(){
     let emailVal = email.innerText;
     let phoneVal = phone.innerText;
     let buttonVal = buttons.innerHTML;
-
+    
     let row = insertRow(rownum);
     
     let c1 = row.insertCell(1);
