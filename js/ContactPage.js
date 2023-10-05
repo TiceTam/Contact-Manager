@@ -1,5 +1,5 @@
 
-
+let contactIDs = [];
 
 //initial loading of contacts.
 loadContacts();
@@ -84,20 +84,24 @@ function load(info){
     for(var i = 1;i<table.rows.length;){
         table.deleteRow(i);
     }
-    
+
     for(i = 1; i <= contacts.length; i++){
+        contactIDs[i-1] = contacts[i-1].ID;
+        
         let row = table.insertRow(-1);
         let c1 = row.insertCell(0);
         let c2 = row.insertCell(1);
         let c3 = row.insertCell(2);
         let c4 = row.insertCell(3);
         let c5 = row.insertCell(4);
+        let c6 = row.insertCell(5);
 
         c1.innerText = i;
         c2.innerText = contacts[i-1].firstname
         c3.innerText = contacts[i-1].lastname
         c4.innerText = contacts[i-1].email
         c5.innerText = contacts[i-1].phone
+        c6.innerHTML = "<button id ='editButton'>Edit</button><button id = 'deleteButton'>Delete</button>";
     }
 
 }
