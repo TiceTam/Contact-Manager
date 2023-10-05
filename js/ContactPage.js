@@ -162,7 +162,7 @@ function load(info){
         c3.innerText = contacts[i-1].lastname
         c4.innerText = contacts[i-1].email
         c5.innerText = contacts[i-1].phone
-        c6.innerHTML = "<button id ='editButton' onClick='editContact()'>Edit</button><button id = 'deleteButton' onClick= 'deleteContact()'>Delete</button>";
+        c6.innerHTML = "<button id ='editButton' onClick='editContact()' class='fa-solid fa-pen-to-square fs-5 me-3'>Edit</button><button id = 'deleteButton' onClick= 'deleteContact()' class='fa-solid fa-trash fs-5'>Delete</button>";
     }
 
 }
