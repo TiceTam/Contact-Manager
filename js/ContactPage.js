@@ -5,7 +5,7 @@ let contactIDs = [];
 loadContacts();
 
 let mysearch = document.getElementById("mysearch");
-let addContactButton = document.getElementById("addContactButton");
+let addContactButton = document.getElementById("addConButton");
 
 addContactButton.addEventListener('click', ()=>{
     addContact();
@@ -18,11 +18,11 @@ mysearch.addEventListener('keypress',function(event){
 });
 
 function addContact(){
-    let firstname = document.getElementById("typeFname");
-    let lastname = document.getElementById("typeLname");
-    let email = document.getElementById("typeEmail");
-    let phone = document.getElementById("typePhone");
-    let userID = sessionStorage.getItem("userID");
+    let firstname = document.getElementById("typeFname").value;
+    let lastname = document.getElementById("typeLname").value;
+    let email = document.getElementById("typeEmail").value;
+    let phone = document.getElementById("typePhone").value;
+    let userID = sessionStorage.getItem("userID").value;
 
     let contact = {
         "firstname": firstname,
