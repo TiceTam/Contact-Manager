@@ -29,10 +29,16 @@ signupButton.addEventListener('click',()=>{
             // console.log("Got a response");
             // text = response.json()
             // return text
-            return response.json()
+            return response.text()
         })
         .then((data) =>{
-            signUp(data);
+            console.log("here we go")
+            let info = JSON.parse(data);
+            return info;
+        })
+        .then((info) =>{
+            console.log(info)
+            signUp(info)
         });
 });
 // needs a Javascript object
