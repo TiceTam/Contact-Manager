@@ -62,12 +62,12 @@ function editContact(){
     let emailVal = email.innerText;
     let phoneVal = phone.innerText;
     
-    firstname.innerHTML = "<input type='text' placeholder='" + firstnameVal + "' id='typeFNameEdit'>";
-    lastname.innerHTML = "<input type='text' placeholder='" + lastnameVal + "' id='typeLNameEdit'>";
-    email.innerHTML = "<input type='text' placeholder='" + emailVal + "' id='typeEmailEdit'>";
-    phone.innerHTML = "<input type='text' placeholder='" + phoneVal + "' id='typePhoneEdit'>";
+    firstname.innerHTML = "<input type='text' value='" + firstnameVal + "' id='typeFNameEdit'>";
+    lastname.innerHTML = "<input type='text' value='" + lastnameVal + "' id='typeLNameEdit'>";
+    email.innerHTML = "<input type='text' value='" + emailVal + "' id='typeEmailEdit'>";
+    phone.innerHTML = "<input type='text' value='" + phoneVal + "' id='typePhoneEdit'>";
 
-    
+
 
     
     
