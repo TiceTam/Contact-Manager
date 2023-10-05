@@ -5,6 +5,16 @@ let contactIDs = [];
 loadContacts();
 
 let mysearch = document.getElementById("mysearch");
+let deleteButton = document.getElementById("deleteButton");
+
+
+deleteButton.addEventListener('click', ()=>{
+    let rownum = deleteButton.parentNode.parentNode.rowIndex;
+    console.log(rownum);
+    let contactID = contactIDs[rownum];
+
+    deleteContact(contactID);
+});
 
 mysearch.addEventListener('keypress',function(event){
     if (event.key == "Enter"){
@@ -13,6 +23,28 @@ mysearch.addEventListener('keypress',function(event){
 });
 
 
+function deleteContact(contactID){
+    let contact = {
+        "contactID": contactID
+    }
+
+    fetch("API/DeleteContact.php",{
+        "method": "POST",
+        "headers": {
+            "Content-Type" : "application/json; charset=utf-8"
+        },
+
+        "body" : JSON.stringify(contact)
+
+    }).then(function(response){
+        return response.text();
+            
+    }).then(function(data){
+        console.log(data);
+        let info = JSON.parse(data);
+        loadContacts();
+    });
+}
 
 function searchContacts(){
     let userID = sessionStorage.getItem("userID");
@@ -87,7 +119,7 @@ function load(info){
 
     for(i = 1; i <= contacts.length; i++){
         contactIDs[i-1] = contacts[i-1].ID;
-        
+
         let row = table.insertRow(-1);
         let c1 = row.insertCell(0);
         let c2 = row.insertCell(1);
