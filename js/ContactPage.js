@@ -14,8 +14,8 @@ mysearch.addEventListener('keypress',function(event){
 });
 
 function addContact(){
-    let firstname = document.getElementById("typeFname").value;
-    let lastname = document.getElementById("typeLname").value;
+    let firstname = document.getElementById("typeFirstName").value;
+    let lastname = document.getElementById("typeLastName").value;
     let email = document.getElementById("typeEmail").value;
     let phone = document.getElementById("typePhone").value;
     let userID = sessionStorage.getItem("userID").value;
