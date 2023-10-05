@@ -5,16 +5,7 @@ let contactIDs = [];
 loadContacts();
 
 let mysearch = document.getElementById("mysearch");
-let deleteButton = document.getElementById("deleteButton");
 
-
-deleteButton.addEventListener('click', ()=>{
-    let rownum = deleteButton.parentNode.parentNode.rowIndex;
-    console.log(rownum);
-    let contactID = contactIDs[rownum];
-
-    deleteContact(contactID);
-});
 
 mysearch.addEventListener('keypress',function(event){
     if (event.key == "Enter"){
@@ -23,7 +14,9 @@ mysearch.addEventListener('keypress',function(event){
 });
 
 
-function deleteContact(contactID){
+function deleteContact(){
+    let rownum = getElementById("deleteButton").parentNode.parentNode.rowIndex
+    let contactID = contactIDs[rownum];
     let contact = {
         "contactID": contactID
     }
@@ -133,7 +126,7 @@ function load(info){
         c3.innerText = contacts[i-1].lastname
         c4.innerText = contacts[i-1].email
         c5.innerText = contacts[i-1].phone
-        c6.innerHTML = "<button id ='editButton'>Edit</button><button id = 'deleteButton'>Delete</button>";
+        c6.innerHTML = "<button id ='editButton' onClick='editContact()'>Edit</button><button id = 'deleteButton' onClick= 'deleteContact()'>Delete</button>";
     }
 
 }
