@@ -15,7 +15,7 @@ mysearch.addEventListener('keypress',function(event){
 
 
 function deleteContact(){
-    let rownum = getElementById("deleteButton").parentNode.parentNode.rowIndex
+    let rownum = document.getElementById("deleteButton").parentNode.parentNode.rowIndex
     let contactID = contactIDs[rownum];
     let contact = {
         "contactID": contactID
