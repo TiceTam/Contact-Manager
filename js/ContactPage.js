@@ -48,13 +48,34 @@ function addContact(){
 }
 //TODO: Edit contact functionality will go here. The Edit button is already setup to trigger this function.
 function editContact(){
-    let rownum = document.getElementById("editButton").parentNode.parentNode.rowIndex
+    let rownum = document.getElementById("editButton").parentNode.parentNode.rowIndex;
     let contactID = contactIDs[rownum];
+    let row = document.getElementById("editButton").parentNode.parentNode;
+
+    let firstname = row.childNodes[1];
+    let lastname = row.childNodes[2];
+    let email = row.childNodes[3];
+    let phone = row.childNodes[4];
+
+    let firstnameVal = firstname.innerText;
+    let lastnameVal = lastname.innerText;
+    let emailVal = email.innerText;
+    let phoneVal = phone.innerText;
+    
+    firstname.innerHTML = "<input type='text' placeholder='" + firstnameVal + "' id='typeFNameEdit'>";
+    lastname.innerHTML = "<input type='text' placeholder='" + lastnameVal + "' id='typeLNameEdit'>";
+    email.innerHTML = "<input type='text' placeholder='" + emailVal + "' id='typeEmailEdit'>";
+    phone.innerHTML = "<input type='text' placeholder='" + phoneVal + "' id='typePhoneEdit'>";
+
+    
+
+    
+    
     
 }
 
 function deleteContact(){
-    let rownum = document.getElementById("deleteButton").parentNode.parentNode.rowIndex
+    let rownum = document.getElementById("deleteButton").parentNode.parentNode.rowIndex;
     let contactID = contactIDs[rownum];
 
     let contact = {
