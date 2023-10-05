@@ -50,29 +50,74 @@ function addContact(){
 function editContact(){
     let rownum = document.getElementById("editButton").parentNode.parentNode.rowIndex;
     let contactID = contactIDs[rownum];
+
+    
+
     let row = document.getElementById("editButton").parentNode.parentNode;
 
     let firstname = row.childNodes[1];
     let lastname = row.childNodes[2];
     let email = row.childNodes[3];
     let phone = row.childNodes[4];
+    let buttons = row.childNodes[5];
 
     let firstnameVal = firstname.innerText;
     let lastnameVal = lastname.innerText;
     let emailVal = email.innerText;
     let phoneVal = phone.innerText;
+    let buttonVal = buttons.innerHTML;
     
     firstname.innerHTML = "<input type='text' value='" + firstnameVal + "' id='typeFNameEdit'>";
     lastname.innerHTML = "<input type='text' value='" + lastnameVal + "' id='typeLNameEdit'>";
     email.innerHTML = "<input type='text' value='" + emailVal + "' id='typeEmailEdit'>";
     phone.innerHTML = "<input type='text' value='" + phoneVal + "' id='typePhoneEdit'>";
+    buttons.innerHTML = "<button id ='confirmEdit'>Confirm</button><button id = 'cancelEdit'>Cancel</button>";
+
+    let confirmEdit = document.getElementById("confirmEdit");
+    let cancelEdit = document.getElementById("cancelEdit");
+
+    confirmEdit.addEventListener('click', ()=>{
+        let firstnameInput = document.getElementById("typeFNameEdit").value;
+        let lastnameInput = document.getElementById("typeLNameEdit").value;
+        let emailInput = document.getElementById("typeEmailEdit").value;
+        let phoneInput = document.getElementById("typePhoneEdit").value;
+        
+        let contact = {
+            "contactID": contactID,
+            "firstname": firstnameInput,
+            "lastname": lastnameInput,
+            "email": emailInput,
+            "phone": phoneInput
+        }
+
+        fetch("API/EditContact.php",{
+            "method": "POST",
+            "headers": {
+                "Content-Type" : "application/json; charset=utf-8"
+            },
+    
+            "body" : JSON.stringify(contact)
+    
+        }).then(function(response){
+            return response.text();
+                
+        }).then(function(data){
+            loadContacts();
+        });
+    });
+
+    cancelEdit.addEventListener('click', ()=>{
+        firstname.innerText = firstnameVal;
+        lastname.innerText = lastnameVal;
+        email.innerText = emailVal;
+        phone.innerText = phoneVal;
+        buttons.innerHTML = buttonVal;
+    });
 
 
-
-    
-    
-    
 }
+
+
 
 function deleteContact(){
     let rownum = document.getElementById("deleteButton").parentNode.parentNode.rowIndex;
