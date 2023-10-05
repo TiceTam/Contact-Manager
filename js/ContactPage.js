@@ -18,7 +18,7 @@ function addContact(){
     let lastname = document.getElementById("typeLastName").value;
     let email = document.getElementById("typeEmail").value;
     let phone = document.getElementById("typePhone").value;
-    let userID = sessionStorage.getItem("userID").value;
+    let userID = sessionStorage.getItem("userID");
 
     let contact = {
         "firstname": firstname,
