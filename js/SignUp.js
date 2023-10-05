@@ -34,12 +34,12 @@ signupButton.addEventListener('click',()=>{
         })
         .then((data) =>{
             console.log("here we go")
-            let info = JSON.parse(data);
-            return info;
-        })
-        .then((info) =>{
-            console.log(info)
-            signUp(info)
+            if (data == ""){
+                window.location.href = "http://cop4331groupfifteen.xyz/login_page.html";
+            }
+            else {
+                signUpError.innerHTML= "Username already exists";
+            }
         })
         .catch((error)=>{
             console.log("An error occurred.")
