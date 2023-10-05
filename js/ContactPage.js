@@ -33,8 +33,6 @@ function deleteContact(){
         return response.text();
             
     }).then(function(data){
-        console.log(data);
-        let info = JSON.parse(data);
         loadContacts();
     });
 }
