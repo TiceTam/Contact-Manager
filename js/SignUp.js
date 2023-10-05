@@ -29,6 +29,7 @@ signupButton.addEventListener('click',()=>{
             // console.log("Got a response");
             // text = response.json()
             // return text
+            console.log("Successful post")
             return response.text()
         })
         .then((data) =>{
@@ -39,6 +40,9 @@ signupButton.addEventListener('click',()=>{
         .then((info) =>{
             console.log(info)
             signUp(info)
+        })
+        .catch((error)=>{
+            console.log("An error occurred.")
         });
 });
 // needs a Javascript object
