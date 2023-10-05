@@ -61,13 +61,7 @@ function deleteContact(){
         "contactID": contactID
     }
 
-    let deletePopup = document.getElementById("deleteContact");
-
-    deletePopup.style.display = "block";
-
-    let deleteConButton = document.getElementById("deleteConButton");
-
-    deleteConButton.addEventListener('click', ()=>{
+   
         fetch("API/DeleteContact.php",{
             "method": "POST",
             "headers": {
@@ -82,7 +76,6 @@ function deleteContact(){
         }).then(function(data){
             loadContacts();
         });
-    });
 
     
 }
