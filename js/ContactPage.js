@@ -5,7 +5,11 @@ let contactIDs = [];
 loadContacts();
 
 let mysearch = document.getElementById("mysearch");
+let addContactButton = document.getElementById("addContactButton");
 
+addContactButton.addEventListener('click', ()=>{
+    addContact();
+});
 
 mysearch.addEventListener('keypress',function(event){
     if (event.key == "Enter"){
@@ -13,6 +17,43 @@ mysearch.addEventListener('keypress',function(event){
     }
 });
 
+function addContact(){
+    let firstname = document.getElementById("typeFname");
+    let lastname = document.getElementById("typeLname");
+    let email = document.getElementById("typeEmail");
+    let phone = document.getElementById("typePhone");
+    let userID = sessionStorage.getItem("userID");
+
+    let contact = {
+        "firstname": firstname,
+        "lastname": lastname,
+        "email": email,
+        "phone": phone,
+        "userID": userID
+    }
+    
+    fetch("API/AddContact.php",{
+        "method": "POST",
+        "headers": {
+            "Content-Type" : "application/json; charset=utf-8"
+        },
+
+        "body" : JSON.stringify(contact)
+
+    }).then(function(response){
+        return response.text();
+            
+    }).then(function(data){
+        loadContacts();
+    });
+
+}
+//TODO: Edit contact functionality will go here. The Edit button is already setup to trigger this function.
+function editContact(){
+    let rownum = document.getElementById("editButton").parentNode.parentNode.rowIndex
+    let contactID = contactIDs[rownum];
+    
+}
 
 function deleteContact(){
     let rownum = document.getElementById("deleteButton").parentNode.parentNode.rowIndex

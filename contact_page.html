@@ -38,7 +38,7 @@
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#addContact">Add Contact</a>
+            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#addContact" id="addContactButton">Add Contact</a>
           </li>
         </ul>
         <ul class="navbar-nav ms-auto">
@@ -74,6 +74,11 @@
           <div class="form-floating">
             <input type="email" class="form-control" id="typeEmail" placeholder="name@example.com">
             <label for="floatingInput">Email address</label>
+          </div>
+
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" placeholder="Phone" id="typePhone">
+            <label for="floatingInput">Phone</label>
           </div>
         </div>
         <div class="modal-footer">
