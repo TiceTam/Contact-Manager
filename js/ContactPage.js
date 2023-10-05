@@ -1,4 +1,4 @@
-import 'bootstrap';
+
 
 let contactIDs = [];
 
