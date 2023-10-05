@@ -90,7 +90,7 @@ function editContact(){
             "phone": phoneInput
         }
 
-        fetch("API/EditContact.php",{
+        fetch("API/UpdateContact.php",{
             "method": "POST",
             "headers": {
                 "Content-Type" : "application/json; charset=utf-8"
