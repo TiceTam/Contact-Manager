@@ -162,7 +162,7 @@ function load(info){
         c3.innerText = contacts[i-1].lastname
         c4.innerText = contacts[i-1].email
         c5.innerText = contacts[i-1].phone
-        c6.innerHTML = "<i id ='editButton' onClick='editContact()' class='fa-solid fa-pen-to-square fs-5 me-3'></i><i id = 'deleteButton' onClick= 'deleteContact()' class='fa-solid fa-trash fs-5'></i>";
+        c6.innerHTML = "<a href='#' data-bs-toggle='modal' data-bs-target='#editContact' class='link-dark'><i id ='editButton' onClick='editContact()' class='fa-solid fa-pen-to-square fs-5 me-3'></i></a><a href='#' data-bs-toggle='modal' data-bs-target='#deleteContact' class='link-dark'><i id = 'deleteButton' onClick= 'deleteContact()' class='fa-solid fa-trash fs-5'></i></a>";
     }
 
 }
