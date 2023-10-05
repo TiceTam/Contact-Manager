@@ -67,13 +67,13 @@ function editContact(){
     let phoneVal = phone.innerText;
     let buttonVal = buttons.innerHTML;
     
-    row = table.insertRow(rownum);
+    newRow = table.insertRow(rownum);
     
-    let c1 = row.insertCell(1);
-    let c2 = row.insertCell(2);
-    let c3 = row.insertCell(3);
-    let c4 = row.insertCell(4);
-    let c5 = row.insertCell(5);
+    let c1 = newRow.insertCell(1);
+    let c2 = newRow.insertCell(2);
+    let c3 = newRow.insertCell(3);
+    let c4 = newRow.insertCell(4);
+    let c5 = newRow.insertCell(5);
    
     
     c1.innerHTML = "<input type='text' value='" + firstnameVal + "' id='typeFNameEdit'>";
