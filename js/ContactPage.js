@@ -51,10 +51,7 @@ function editContact(){
     let rownum = row.rowIndex
 
     let contactID = contactIDs[rownum];
-
-    table = document.getElementById("contactTable");
-
-    row = table.childNodes[rownum];
+    console.log( "row number" + rownum);
 
     let firstname = row.childNodes[1];
     let lastname = row.childNodes[2];
