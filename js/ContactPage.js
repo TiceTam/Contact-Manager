@@ -127,7 +127,9 @@ function editContact(){
 }
 
 
-
+function openDeleteModal(){
+    $('#deleteContact').modal('show')
+}
 function deleteContact(){
     let rownum = document.getElementById("deleteButton").parentNode.parentNode.rowIndex;
     let contactID = contactIDs[rownum];
@@ -242,7 +244,7 @@ function load(info){
         c3.innerText = contacts[i-1].lastname
         c4.innerText = contacts[i-1].email
         c5.innerText = contacts[i-1].phone
-        c6.innerHTML = "<button id ='editButton' onClick='editContact()'>Edit</button><a href='../contact_page.html#deleteContact' class='btn btn-info' role='button' data-toggle='modal'>Delete Contact</a>"
+        c6.innerHTML = "<button id ='editButton' onClick='editContact()'>Edit</button><button id = 'deleteButton' onClick= 'openDeleteModal()'>Delete</button>"
         // "<button id = 'deleteButton' onClick= 'deleteContact()'>Delete</button>";
     }
 
