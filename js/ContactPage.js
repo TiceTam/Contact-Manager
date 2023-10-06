@@ -242,7 +242,7 @@ function load(info){
         c3.innerText = contacts[i-1].lastname
         c4.innerText = contacts[i-1].email
         c5.innerText = contacts[i-1].phone
-        c6.innerHTML = "<button id ='editButton' onClick='editContact()'>Edit</button><a href='../contact_page#deleteContact' class='btn btn-info' role='button' data-toggle='modal'>Delete Contact</a>"
+        c6.innerHTML = "<button id ='editButton' onClick='editContact()'>Edit</button><a href='../contact_page.html#deleteContact' class='btn btn-info' role='button' data-toggle='modal'>Delete Contact</a>"
         // "<button id = 'deleteButton' onClick= 'deleteContact()'>Delete</button>";
     }
 
