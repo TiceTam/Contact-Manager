@@ -51,7 +51,7 @@ function editContact(trigger){
     let row = trigger.parentNode.parentNode;
    
 
-    let contactID = contactIDs[rownum];
+    let contactID = contactIDs[rownum-1];
     console.log( "row number" + rownum);
 
 
