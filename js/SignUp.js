@@ -26,10 +26,6 @@ signupButton.addEventListener('click',()=>{
         })
         // response should be a promise JSON
         .then(function(response){
-            // console.log("Got a response");
-            // text = response.json()
-            // return text
-            console.log("Successful post")
             return response.text()
         })
         .then((data) =>{
@@ -47,9 +43,7 @@ signupButton.addEventListener('click',()=>{
 });
 // needs a Javascript object
 function signUp(info){
-    if(info.error == ""){
-        // sessionStorage.setItem("userID", data.id);
-        // Registration should just be rerouted to login to get id
+    if(info == ""){
         window.location.href = "http://cop4331groupfifteen.xyz/login_page.html";
     }
     else{

@@ -1,5 +1,4 @@
 
-
 let contactIDs = [];
 
 //initial loading of contacts.
@@ -243,7 +242,8 @@ function load(info){
         c3.innerText = contacts[i-1].lastname
         c4.innerText = contacts[i-1].email
         c5.innerText = contacts[i-1].phone
-        c6.innerHTML = "<button id ='editButton' onClick='editContact()'>Edit</button><button id = 'deleteButton' onClick= 'deleteContact()'>Delete</button>";
+        c6.innerHTML = "<button id ='editButton' onClick='editContact()'>Edit</button><button type='button' class='btn btn-info btn-lg' data-toggle='modal' data-target='#deleteContact'>Delete Contact</button>"
+        // "<button id = 'deleteButton' onClick= 'deleteContact()'>Delete</button>";
     }
 
 }
