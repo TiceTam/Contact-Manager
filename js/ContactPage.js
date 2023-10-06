@@ -65,22 +65,13 @@ function editContact(){
     let emailVal = email.innerText;
     let phoneVal = phone.innerText;
     let buttonVal = buttons.innerHTML;
-    
-    table.deleteRow(rownum);
-    newRow = table.insertRow(rownum);
-    
-    let c1 = newRow.insertCell(1);
-    let c2 = newRow.insertCell(2);
-    let c3 = newRow.insertCell(3);
-    let c4 = newRow.insertCell(4);
-    let c5 = newRow.insertCell(5);
    
     
-    c1.innerHTML = "<input type='text' value='" + firstnameVal + "' id='typeFNameEdit'>";
-    c2.innerHTML = "<input type='text' value='" + lastnameVal + "' id='typeLNameEdit'>";
-    c3.innerHTML = "<input type='text' value='" + emailVal + "' id='typeEmailEdit'>";
-    c4.innerHTML = "<input type='text' value='" + phoneVal + "' id='typePhoneEdit'>";
-    c5.innerHTML = "<button id ='confirmEdit'>Confirm</button><button id = 'cancelEdit'>Cancel</button>";
+    firstname.innerHTML = "<input type='text' value='" + firstnameVal + "' id='typeFNameEdit'>";
+    lastname.innerHTML = "<input type='text' value='" + lastnameVal + "' id='typeLNameEdit'>";
+    email.innerHTML = "<input type='text' value='" + emailVal + "' id='typeEmailEdit'>";
+    phone.innerHTML = "<input type='text' value='" + phoneVal + "' id='typePhoneEdit'>";
+    buttons.innerHTML = "<button id ='confirmEdit'>Confirm</button><button id = 'cancelEdit'>Cancel</button>";
 
     let confirmEdit = document.getElementById("confirmEdit");
     let cancelEdit = document.getElementById("cancelEdit");
