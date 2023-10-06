@@ -49,9 +49,11 @@ function addContact(){
 function editContact(){
     let rownum = document.getElementById("editButton").parentNode.parentNode.rowIndex;
     
+    let table = document.getElementById("contactTable");
 
     let contactID = contactIDs[rownum];
     console.log( "row number" + rownum);
+    let row = table.childNodes[rownum];
 
     let firstname = row.childNodes[1];
     let lastname = row.childNodes[2];
