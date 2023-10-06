@@ -47,8 +47,8 @@ function addContact(){
 }
 //TODO: Edit contact functionality will go here. The Edit button is already setup to trigger this function.
 function editContact(){
-    let row = document.getElementById("editButton").parentNode.parentNode;
-    let rownum = row.rowIndex
+    let rownum = document.getElementById("editButton").parentNode.parentNode.rowIndex;
+    
 
     let contactID = contactIDs[rownum];
     console.log( "row number" + rownum);
