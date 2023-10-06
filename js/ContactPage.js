@@ -54,6 +54,8 @@ function editContact(){
 
     table = document.getElementById("contactTable");
 
+    row = table.childNodes[rownum];
+
     let firstname = row.childNodes[1];
     let lastname = row.childNodes[2];
     let email = row.childNodes[3];
@@ -237,6 +239,7 @@ function load(info){
         c4.innerText = contacts[i-1].email
         c5.innerText = contacts[i-1].phone
         c6.innerHTML = "<button id ='editButton' onClick='editContact()'>Edit</button><button id = 'deleteButton' onClick= 'deleteContact()'>Delete</button>"
+        // "<button id = 'deleteButton' onClick= 'deleteContact()'>Delete</button>";
     }
 
 }
