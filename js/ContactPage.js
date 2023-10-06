@@ -46,14 +46,14 @@ function addContact(){
 
 }
 //TODO: Edit contact functionality will go here. The Edit button is already setup to trigger this function.
-function editContact(){
-    let rownum = document.getElementById("editButton").parentNode.parentNode.rowIndex;
-    
-    let table = document.getElementById("contactTable");
+function editContact(trigger){
+    let rownum = trigger.parentNode.parentNode.rowIndex;
+    let row = trigger.parentNode.parentNode;
+   
 
     let contactID = contactIDs[rownum];
     console.log( "row number" + rownum);
-    let row = table.childNodes[rownum];
+
 
     let firstname = row.childNodes[1];
     let lastname = row.childNodes[2];
@@ -123,8 +123,8 @@ function editContact(){
 function openDeleteModal(){
     $('#deleteContact').modal('show')
 }
-function deleteContact(){
-    let rownum = document.getElementById("deleteButton").parentNode.parentNode.rowIndex;
+function deleteContact(trigger){
+    let rownum = trigger.parentNode.parentNode.rowIndex;
     console.log(rownum);
     let contactID = contactIDs[rownum];
 
@@ -238,7 +238,7 @@ function load(info){
         c3.innerText = contacts[i-1].lastname
         c4.innerText = contacts[i-1].email
         c5.innerText = contacts[i-1].phone
-        c6.innerHTML = "<button id ='editButton' onClick='editContact()'>Edit</button><button id = 'deleteButton' onClick= 'deleteContact()'>Delete</button>"
+        c6.innerHTML = "<button id ='editButton' onClick='editContact(this)'>Edit</button><button id = 'deleteButton' onClick= 'deleteContact(this)'>Delete</button>"
         // "<button id = 'deleteButton' onClick= 'deleteContact()'>Delete</button>";
     }
 
