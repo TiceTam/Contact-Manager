@@ -125,6 +125,7 @@ function openDeleteModal(){
 }
 function deleteContact(){
     let rownum = document.getElementById("deleteButton").parentNode.parentNode.rowIndex;
+    console.log(rownum);
     let contactID = contactIDs[rownum];
 
     let contact = {
