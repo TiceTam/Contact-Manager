@@ -84,6 +84,7 @@ function editContact(trigger){
         let emailInput = document.getElementById("typeEmailEdit").value;
         let phoneInput = document.getElementById("typePhoneEdit").value;
         
+        console.log(firstnameInput);
         let contact = {
             "contactID": contactID,
             "firstname": firstnameInput,
