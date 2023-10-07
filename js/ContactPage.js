@@ -127,7 +127,7 @@ function openDeleteModal(){
 function deleteContact(trigger){
     let rownum = trigger.parentNode.parentNode.rowIndex;
     console.log(rownum);
-    let contactID = contactIDs[rownum];
+    let contactID = contactIDs[rownum-1];
 
     let contact = {
         "contactID": contactID
